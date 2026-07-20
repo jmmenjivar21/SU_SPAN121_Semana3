@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spanish 121 · Capítulo 2.2 · Gustar, Demostrativos y Preguntas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --navy-light: #243561;
+    --terracotta: #c4522a;
+    --terra-light: #e07048;
+    --gold: #d4a537;
+    --gold-light: #f0c45a;
+    --cream: #fdf6ec;
+    --cream-dark: #f4e8d4;
+    --sage: #5a7a5e;
+    --sage-light: #7ba080;
+    --text: #2a1f14;
+    --text-light: #6b5a45;
+    --correct: #2d6e3e;
+    --wrong: #9e2a2a;
+    --correct-bg: #e8f5ec;
+    --wrong-bg: #fde8e8;
+    --tile-shadow: 0 4px 20px rgba(26,39,68,0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background-color: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ─────────────────────────────── */
+  header {
+    background: var(--navy);
+    color: white;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .header-badge {
+    background: var(--terracotta);
+    color: white;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    flex: 1;
+  }
+
+  .header-subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* ── NAV TABS ───────────────────────────── */
+  nav {
+    background: var(--navy-light);
+    border-bottom: 3px solid var(--gold);
+    overflow-x: auto;
+  }
+
+  .nav-inner {
+    display: flex;
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  nav button {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  nav button:hover { color: white; }
+  nav button.active {
+    color: var(--gold-light);
+    border-bottom-color: var(--gold-light);
+  }
+
+  /* ── MAIN ───────────────────────────────── */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  section { display: none; }
+  section.active { display: block; animation: fadeIn 0.3s ease; }
+
+  @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+
+  /* ── WEEK OVERVIEW ──────────────────────── */
+  .week-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #2d4a7a 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 36px 40px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .week-hero::before {
+    content: '2.2';
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .week-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .week-hero p {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+  }
+
+  .topic-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .chip {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Schedule table */
+  .schedule-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--tile-shadow);
+    margin-bottom: 32px;
+  }
+
+  .schedule-table thead {
+    background: var(--navy);
+    color: white;
+  }
+
+  .schedule-table th {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 16px;
+    text-align: left;
+  }
+
+  .schedule-table tbody tr:nth-child(even) { background: var(--cream-dark); }
+  .schedule-table tbody tr:nth-child(odd) { background: white; }
+  .schedule-table tbody tr:hover { background: #efe4d4; transition: background 0.2s; }
+
+  .schedule-table td {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    vertical-align: top;
+  }
+
+  .day-type {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+  }
+
+  .type-inclass { background: var(--navy); color: white; }
+  .type-self { background: var(--sage); color: white; }
+  .type-practice { background: var(--terracotta); color: white; }
+
+  .day-focus { font-weight: 600; color: var(--navy); }
+  .hw-note { font-style: italic; color: var(--text-light); font-size: 0.85rem; }
+
+  /* ── SECTION TITLES ─────────────────────── */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 6px;
+    border-left: 5px solid var(--terracotta);
+    padding-left: 16px;
+  }
+
+  .section-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding-left: 21px;
+  }
+
+  /* ── VOCAB CARDS ────────────────────────── */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .vocab-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--tile-shadow);
+    cursor: pointer;
+    perspective: 600px;
+    height: 110px;
+    position: relative;
+  }
+
+  .vocab-card-inner {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(.4,2,.6,1);
+    border-radius: 10px;
+  }
+
+  .vocab-card.flipped .vocab-card-inner { transform: rotateY(180deg); }
+
+  .vocab-front, .vocab-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .vocab-front {
+    background: white;
+    border: 2px solid var(--cream-dark);
+  }
+
+  .vocab-front .es {
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .vocab-front .hint {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    color: var(--text-light);
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  .vocab-back {
+    background: var(--navy);
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  .vocab-back .en {
+    font-size: 0.95rem;
+    font-weight: 300;
+  }
+
+  .flip-tip {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── GRAMMAR BOXES ──────────────────────── */
+  .grammar-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--tile-shadow);
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+
+  .grammar-header {
+    background: var(--navy);
+    color: white;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .grammar-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--terracotta);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .grammar-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .grammar-body { padding: 24px; }
+  .grammar-body p { margin-bottom: 14px; font-size: 0.95rem; }
+
+  .pronoun-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.9rem;
+  }
+
+  .pronoun-table th {
+    background: var(--cream-dark);
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+
+  .pronoun-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .pronoun-table .sp { font-style: italic; color: var(--navy); font-weight: 600; }
+  .pronoun-table .en { color: var(--text-light); }
+
+  .example-block {
+    background: var(--cream);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 14px 0;
+  }
+
+  .example-block p { margin: 4px 0; font-size: 0.9rem; }
+
+  .example-block .label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px !important;
+  }
+
+  .example-block .es { font-style: italic; color: var(--navy); }
+  .example-block .en { color: var(--text-light); font-size: 0.82rem; }
+
+  /* ── EXERCISES ──────────────────────────── */
+  .exercise-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--tile-shadow);
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+
+  .exercise-header {
+    background: var(--terracotta);
+    color: white;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .exercise-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+  }
+
+  .exercise-header .ex-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    background: rgba(0,0,0,0.2);
+    padding: 4px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.08em;
+  }
+
+  .exercise-body { padding: 24px; }
+
+  .exercise-body .instructions {
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--cream-dark);
+    padding-bottom: 14px;
+  }
+
+  .exercise-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: var(--cream);
+    transition: background 0.2s;
+  }
+
+  .exercise-item.correct { background: var(--correct-bg); }
+  .exercise-item.wrong { background: var(--wrong-bg); }
+
+  .item-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    min-width: 22px;
+    margin-top: 2px;
+  }
+
+  .item-text { flex: 1; }
+  .item-text p { font-size: 0.92rem; margin-bottom: 8px; }
+
+  .fill-sentence {
+    font-size: 0.92rem;
+    line-height: 2.2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .blank-input {
+    background: white;
+    border: none;
+    border-bottom: 2px solid var(--navy);
+    padding: 2px 8px;
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--navy);
+    min-width: 130px;
+    width: auto;
+    transition: border-color 0.2s;
+  }
+
+  .blank-input:focus { outline: none; border-bottom-color: var(--gold); }
+  .blank-input.correct-input { border-bottom-color: var(--correct); color: var(--correct); }
+  .blank-input.wrong-input { border-bottom-color: var(--wrong); color: var(--wrong); }
+
+  .feedback {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    margin-top: 6px;
+    display: none;
+  }
+
+  .feedback.show { display: block; }
+  .feedback.correct { color: var(--correct); }
+  .feedback.wrong { color: var(--wrong); }
+
+  .btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--cream-dark);
+  }
+
+  .btn {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-check { background: var(--navy); color: white; }
+  .btn-check:hover { background: var(--navy-light); transform: translateY(-1px); }
+  .btn-reset { background: var(--cream-dark); color: var(--text); }
+  .btn-reset:hover { background: #e0d0b8; }
+
+  .score-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-left: auto;
+    display: none;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .score-badge.show { display: flex; }
+  .score-badge.good { background: var(--correct-bg); color: var(--correct); }
+  .score-badge.ok { background: #fff3cd; color: #856404; }
+  .score-badge.retry { background: var(--wrong-bg); color: var(--wrong); }
+
+  /* word bank */
+  .word-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 14px;
+    background: var(--cream);
+    border-radius: 8px;
+    border: 1px dashed var(--cream-dark);
+  }
+
+  .word-bank-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  .word-chip {
+    background: white;
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--navy);
+  }
+
+  /* ── CONJUGATION TABLE EXERCISE ─────────── */
+  .conj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .conj-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--cream);
+    border-radius: 6px;
+    padding: 8px 12px;
+  }
+
+  .conj-pronoun {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    min-width: 90px;
+  }
+
+  .conj-input {
+    flex: 1;
+    border: none;
+    border-bottom: 2px solid var(--navy);
+    background: transparent;
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--navy);
+    padding: 2px 4px;
+  }
+
+  .conj-input:focus { outline: none; border-bottom-color: var(--gold); }
+  .conj-input.correct-input { border-bottom-color: var(--correct); color: var(--correct); }
+  .conj-input.wrong-input { border-bottom-color: var(--wrong); color: var(--wrong); }
+
+  .conj-verb-header {
+    background: var(--navy);
+    color: white;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .conj-section { margin-bottom: 24px; }
+
+  /* ── CULTURAL NOTE ──────────────────────── */
+  .cultural-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--tile-shadow);
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+
+  .cultural-header {
+    background: linear-gradient(90deg, var(--sage) 0%, var(--sage-light) 100%);
+    color: white;
+    padding: 16px 24px;
+  }
+
+  .cultural-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+  }
+
+  .cultural-body {
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 640px) { .cultural-body { grid-template-columns: 1fr; } }
+
+  .fact-card {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .fact-card .fact-icon { font-size: 1.5rem; margin-bottom: 8px; }
+  .fact-card h4 {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .fact-card p { font-size: 0.88rem; }
+
+  /* ── VIDEO LOG ──────────────────────────── */
+  .checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--cream);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .checklist-item:hover { background: var(--cream-dark); }
+
+  .checklist-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--sage);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .checklist-item label {
+    font-size: 0.92rem;
+    cursor: pointer;
+    flex: 1;
+  }
+
+  .checklist-item.done label {
+    text-decoration: line-through;
+    color: var(--text-light);
+  }
+
+  .script-area {
+    width: 100%;
+    border: 2px solid var(--cream-dark);
+    border-radius: 8px;
+    padding: 16px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.92rem;
+    color: var(--navy);
+    resize: vertical;
+    min-height: 200px;
+    margin-top: 12px;
+    transition: border-color 0.2s;
+    background: white;
+  }
+
+  .script-area:focus { outline: none; border-color: var(--gold); }
+
+  .progress-bar-wrap {
+    background: var(--cream-dark);
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+    margin: 6px 0 4px;
+  }
+
+  .progress-bar {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--sage), var(--sage-light));
+    transition: width 0.5s ease;
+  }
+
+  /* ── RESPONSIVE ─────────────────────────── */
+  @media (max-width: 600px) {
+    .header-inner { padding: 12px 16px; gap: 10px; }
+    main { padding: 24px 16px 60px; }
+    .week-hero { padding: 24px 20px; }
+    .week-hero h1 { font-size: 1.5rem; }
+    .grammar-body { padding: 16px; }
+    .exercise-body { padding: 16px; }
+    .conj-grid { grid-template-columns: 1fr; }
+  }
+
+  /* connector chips */
+  .connector-chip {
+    display: inline-block;
+    background: var(--navy);
+    color: white;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 2px 4px;
+    letter-spacing: 0.04em;
+  }
+
+  /* learning objectives list */
+  .obj-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .obj-item {
+    background: white;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    box-shadow: var(--tile-shadow);
+    border-left: 4px solid var(--gold);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .obj-item::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.7rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  /* -- REPORT BAR (persistent) -- */
+  .report-bar { background: var(--navy-light); border-bottom: 1px solid rgba(255,255,255,0.12); position: sticky; top: 0; z-index: 90; }
+  .report-bar-inner { max-width: 1100px; margin: 0 auto; padding: 10px 32px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .report-bar .rb-label { font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+  .report-bar input { background: white; border: none; border-radius: 5px; padding: 7px 12px; font-family: 'Source Serif 4', serif; font-size: 0.85rem; color: var(--navy); min-width: 200px; flex: 1; max-width: 320px; }
+  .report-bar input:focus { outline: 2px solid var(--gold); }
+  .report-bar button { background: var(--terracotta); color: white; border: none; border-radius: 5px; padding: 7px 16px; font-family: 'Space Mono', monospace; font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s, transform 0.2s; }
+  .report-bar button:hover { background: var(--terra-light); transform: translateY(-1px); }
+  .report-bar .rb-msg { font-family: 'Space Mono', monospace; font-size: 0.64rem; color: rgba(255,255,255,0.85); }
+  @media (max-width: 600px) { .report-bar-inner { padding: 10px 16px; } .report-bar input { min-width: 140px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="header-badge">SPSCC · ESP 121</span>
+    <span class="header-title">Capítulo 2.2 — Gustar, Demostrativos y Preguntas</span>
+    <span class="header-subtitle">Semana 3</span>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="active" onclick="showSection('overview')">📋 Overview</button>
+    <button onclick="showSection('vocab')">🗣️ Vocabulario</button>
+    <button onclick="showSection('gramatica')">📐 Gramática</button>
+    <button onclick="showSection('ejercicios')">✏️ Ejercicios</button>
+    <button onclick="showSection('cultura')">🌎 Cultura</button>
+    <button onclick="showSection('repaso')">🎯 Repaso Midterm</button>
+
+  </div>
+</nav>
+
+<div class="report-bar">
+  <div class="report-bar-inner">
+    <span class="rb-label">Homework — proof of work:</span>
+    <input id="studentName" type="text" placeholder="Type your full name" autocomplete="off" spellcheck="false">
+    <button onclick="downloadReport()">Download Report</button>
+    <span class="rb-msg" id="reportMsg"></span>
+  </div>
+</div>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════ OVERVIEW -->
+<section id="overview" class="active">
+  <div class="week-hero">
+    <h1>Capítulo 2.2: Gustar, Demostrativos y Preguntas</h1>
+    <p>SPSCC · Spanish 121 · Likes, dislikes, pointing things out, and counting</p>
+    <div class="topic-chips">
+      <span class="chip">gustar/gustan</span>
+      <span class="chip">este/ese/aquel</span>
+      <span class="chip">números 1–50</span>
+      <span class="chip">conectores: y/pero/por eso</span>
+      <span class="chip">preguntas</span>
+      <span class="chip">El Trío de Oro</span>
+      <span class="chip">Repaso para Midterm</span>
+    </div>
+  </div>
+
+  <!-- Learning Objectives -->
+  <h2 class="section-title">Learning Objectives</h2>
+  <p class="section-meta">Objetivos del capítulo · By the end of Chapter 2.2 you will be able to:</p>
+  <div class="obj-list">
+    <div class="obj-item"><span>Express likes &amp; dislikes using <em>(no) me/te/le gusta(n)</em> with infinitives and nouns</span></div>
+    <div class="obj-item"><span>Choose between <em>gusta</em> (singular) and <em>gustan</em> (plural) based on the noun being liked</span></div>
+    <div class="obj-item"><span>Use demonstratives <em>este, ese, aquel</em> with correct gender and number agreement</span></div>
+    <div class="obj-item"><span>Distinguish the three demonstrative distances: near you, near the listener, far from both</span></div>
+    <div class="obj-item"><span>Count and write numbers from 1 to 50 in Spanish</span></div>
+    <div class="obj-item"><span>Connect ideas with <em>y, pero, también, por eso, así que</em></span></div>
+    <div class="obj-item"><span>Use interrogative words to craft questions in Spanish</em></span></div>
+    <div class="obj-item"><span>Review Semana 1–3 grammar for Midterm</em></span></div>
+    <div class="obj-item"><span>Recognize the cultural impact of <em>El Trío de Oro</em> — Cuarón, Iñárritu, and del Toro</span></div>
+  </div>
+
+  <!-- Online Resources -->
+  <h2 class="section-title">Online Resources</h2>
+  <p class="section-meta">Semana 3 · Outside Materials</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:16px">
+    <div style="background:white;border-radius:10px;padding:18px;box-shadow:var(--tile-shadow)">
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--terracotta);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Gustar &amp; Demostrativos</div>
+      <p style="font-size:0.88rem;font-weight:600;margin-bottom:8px">Gustar + Adjetivos demostrativos</p>
+      <iframe width="280" height="155" src="https://www.youtube.com/embed/Iaa6IH8M-G0?si=qPgP0YebWPUq0VVE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <a href="https://personal.colby.edu/~bknelson/SLC/gustar1.html" target="_blank" style="display:block;font-size:0.8rem;color:var(--navy);text-decoration:none">📝 Practice: Gustar Fill-in Exercises</a>
+    </div>
+    <div style="background:white;border-radius:10px;padding:18px;box-shadow:var(--tile-shadow)">
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--terracotta);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Demostrativos &amp; Números</div>
+      <p style="font-size:0.88rem;font-weight:600;margin-bottom:8px">Gustar en acción + Demostrativos + Números</p>
+      <iframe width="280" height="155" src="https://www.youtube.com/embed/ZCBB6ilYSj0" title="Demonstrative Adjectives — Señor Jordan" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius:8px;margin-bottom:8px;max-width:100%"></iframe>
+      <a href="https://studyspanish.com/grammar/test/demonstratives" target="_blank" style="display:block;font-size:0.8rem;color:var(--navy);text-decoration:none">📝 Practice: Demonstrative Adjectives</a>
+    </div>
+    <div style="background:white;border-radius:10px;padding:18px;box-shadow:var(--tile-shadow)">
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--terracotta);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Conectores</div>
+      <p style="font-size:0.88rem;font-weight:600;margin-bottom:8px">Conectores + Borrador del perfil</p>
+      <iframe width="280" height="155" src="https://www.youtube.com/embed/4Gf4FIqaPzo" title="Spanish Connectors — Butterfly Spanish" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius:8px;margin-bottom:8px;max-width:100%"></iframe>
+      <a href="https://baselang.com/blog/basic-grammar/spanish-connectors/" target="_blank" style="display:block;font-size:0.8rem;color:var(--navy);text-decoration:none">📝 Practice: Connectors Practice</a>
+    </div>
+    <div style="background:white;border-radius:10px;padding:18px;box-shadow:var(--tile-shadow)">
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--terracotta);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Preguntas</div>
+      <p style="font-size:0.88rem;font-weight:600;margin-bottom:8px">¡Preguntas!</p>
+      <iframe width="280" height="155" src="https://www.youtube.com/embed/Iaa6IH8M-G0" title="Interrogatives" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius:8px;margin-bottom:8px;max-width:100%"></iframe>
+      <a href="https://personal.colby.edu/~bknelson/SLC/interrogatives.html" target="_blank" style="display:block;font-size:0.8rem;color:var(--navy);text-decoration:none">📝 Practice: Interrogatives</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ VOCABULARIO -->
+<section id="vocab">
+  <h2 class="section-title">Vocabulario A — Números 1–50</h2>
+  <p class="section-meta">Numbers · The numeral is on the front; flip to see the Spanish word</p>
+  <p class="flip-tip">🔢 1–15 are unique words you must memorize. 16–29 are written as one word. 30+ uses <em>treinta / cuarenta + y + (digit)</em> as separate words.</p>
+
+  <div class="vocab-grid" id="vocab1Cards"></div>
+
+  <h2 class="section-title">Vocabulario B — Conectores</h2>
+  <p class="section-meta">Connectors · The glue that turns simple sentences into fluent speech</p>
+  <p class="flip-tip">🔗 Click any card to flip and see the meaning</p>
+
+  <div class="vocab-grid" id="vocab2Cards"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ GRAMÁTICA -->
+<section id="gramatica">
+  <h2 class="section-title">Gramática — Grammar Notes</h2>
+  <p class="section-meta">Semana 3 · Two key structures</p>
+
+  <!-- GRAMMAR BOX 1 — gustar -->
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">G1</div>
+      <div>
+        <h3>(No) Me Gusta / Me Gustan — Expressing Likes &amp; Dislikes</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Backwards from English · the thing liked is the subject</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <p><em>Gustar</em> works <strong>differently from English "to like."</strong> Literally it means <em>"to be pleasing to."</em> So <em>"Me gusta el café"</em> is really <em>"Coffee is pleasing to me."</em> The <strong>subject</strong> is <strong>WHAT is liked</strong>; the indirect object pronoun (<em>me, te, le…</em>) tells <strong>WHO likes it</strong>. That's why the verb only has two forms you'll use a lot: <em>gusta</em> (singular) and <em>gustan</em> (plural).</p>
+
+      <table class="pronoun-table">
+        <thead>
+          <tr>
+            <th>Structure</th>
+            <th>Example</th>
+            <th>Translation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sp">me gusta + infinitive</td>
+            <td class="sp">Me gusta bailar.</td>
+            <td class="en">I like to dance.</td>
+          </tr>
+          <tr>
+            <td class="sp">me gusta + singular noun</td>
+            <td class="sp">Me gusta la música.</td>
+            <td class="en">I like music.</td>
+          </tr>
+          <tr>
+            <td class="sp">me gustan + plural noun</td>
+            <td class="sp">Me gustan las películas.</td>
+            <td class="en">I like movies.</td>
+          </tr>
+          <tr>
+            <td class="sp">no me gusta…</td>
+            <td class="sp">No me gusta el rap.</td>
+            <td class="en">I don't like rap.</td>
+          </tr>
+          <tr>
+            <td class="sp">¿te gusta…?</td>
+            <td class="sp">¿Te gusta leer?</td>
+            <td class="en">Do you like to read?</td>
+          </tr>
+          <tr>
+            <td class="sp">le gusta…</td>
+            <td class="sp">Le gusta el fútbol.</td>
+            <td class="en">He/She likes soccer.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Key pattern:</strong> Look at the <strong>noun after gusta(n)</strong>. Singular noun or infinitive → <em>gusta</em>. Plural noun → <em>gustan</em>. The verb agrees with the thing liked, NOT the person liking it.</p>
+
+      <div class="example-block">
+        <p class="label">Pronoun Reference — Who likes it?</p>
+        <p class="es">me — I (to me)</p>
+        <p class="es">te — you, informal</p>
+        <p class="es">le — he/she/you-formal (clarify with <em>"a él / a ella / a Ud."</em> if needed)</p>
+        <p class="es">nos — we</p>
+        <p class="es">les — they / you-plural</p>
+      </div>
+
+      <div class="example-block">
+        <p class="label">More Examples · Más ejemplos</p>
+        <p class="es">A nosotros nos gustan los conciertos al aire libre. <span class="en">→ We like outdoor concerts.</span></p>
+        <p class="es">A ella le gusta el cine independiente. <span class="en">→ She likes independent film.</span></p>
+        <p class="es">No me gusta estudiar de noche; prefiero las mañanas.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRAMMAR BOX 2 — Demonstratives -->
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">G2</div>
+      <div>
+        <h3>Adjetivos Demostrativos — este / ese / aquel</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Three distances · agree in gender and number</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <p>Spanish has <strong>three</strong> demonstratives, not two like English. Each marks a different distance: <em>este</em> for what's near YOU, <em>ese</em> for what's near the LISTENER, and <em>aquel</em> for what's far from both. Like all adjectives, they agree in gender and number with the noun they modify.</p>
+
+      <table class="pronoun-table">
+        <thead>
+          <tr><th>Form</th><th>Near (this / these)</th><th>Middle (that / those)</th><th>Far (that one over there)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="connector-chip">masc. sg.</span></td>
+            <td class="sp">este libro</td>
+            <td class="sp">ese libro</td>
+            <td class="sp">aquel libro</td>
+          </tr>
+          <tr>
+            <td><span class="connector-chip">fem. sg.</span></td>
+            <td class="sp">esta clase</td>
+            <td class="sp">esa clase</td>
+            <td class="sp">aquella clase</td>
+          </tr>
+          <tr>
+            <td><span class="connector-chip">masc. pl.</span></td>
+            <td class="sp">estos libros</td>
+            <td class="sp">esos libros</td>
+            <td class="sp">aquellos libros</td>
+          </tr>
+          <tr>
+            <td><span class="connector-chip">fem. pl.</span></td>
+            <td class="sp">estas clases</td>
+            <td class="sp">esas clases</td>
+            <td class="sp">aquellas clases</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="example-block">
+        <p class="label">More Examples · Más ejemplos</p>
+        <p class="es"><strong>Este</strong> libro (here in my hands) es interesante. <span class="en">→ This book…</span></p>
+        <p class="es"><strong>Esa</strong> mochila (next to you) es nueva. <span class="en">→ That backpack…</span></p>
+        <p class="es"><strong>Aquellas</strong> montañas (way over there) son hermosas. <span class="en">→ Those mountains over there…</span></p>
+        <p class="es">Me gustan <strong>estos</strong> tacos pero no me gustan <strong>aquellos</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRAMMAR BOX 3 — Question Words -->
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">G3</div>
+      <div>
+        <h3>Las Palabras Interrogativas — Question Words</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Always with accents · always wrapped in ¿…?</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <p>Spanish question words <strong>always carry a written accent</strong>. The accent is what tells them apart from their non-question cousins: <em>que</em> (that) vs <em>qué</em> (what?), <em>donde</em> (where, relative) vs <em>dónde</em> (where?), <em>como</em> (like, as) vs <em>cómo</em> (how?). Every direct question is also wrapped in <strong>inverted question marks</strong> — <em>¿…?</em> — at both ends.</p>
+
+      <table class="pronoun-table">
+        <thead>
+          <tr>
+            <th>Question Word</th>
+            <th>Meaning</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sp">¿qué?</td>
+            <td class="en">what?</td>
+            <td class="sp">¿Qué haces los fines de semana?</td>
+          </tr>
+          <tr>
+            <td class="sp">¿quién? / ¿quiénes?</td>
+            <td class="en">who? (sg / pl)</td>
+            <td class="sp">¿Quién es ese chico? / ¿Quiénes son tus amigos?</td>
+          </tr>
+          <tr>
+            <td class="sp">¿cuándo?</td>
+            <td class="en">when?</td>
+            <td class="sp">¿Cuándo es la fiesta?</td>
+          </tr>
+          <tr>
+            <td class="sp">¿dónde?</td>
+            <td class="en">where? (location)</td>
+            <td class="sp">¿Dónde está mi mochila?</td>
+          </tr>
+          <tr>
+            <td class="sp">¿adónde?</td>
+            <td class="en">where to? (destination)</td>
+            <td class="sp">¿Adónde vas después de clase?</td>
+          </tr>
+          <tr>
+            <td class="sp">¿de dónde?</td>
+            <td class="en">from where?</td>
+            <td class="sp">¿De dónde eres?</td>
+          </tr>
+          <tr>
+            <td class="sp">¿por qué?</td>
+            <td class="en">why?</td>
+            <td class="sp">¿Por qué estudias español?</td>
+          </tr>
+          <tr>
+            <td class="sp">¿cómo?</td>
+            <td class="en">how? / what's…like?</td>
+            <td class="sp">¿Cómo te llamas? / ¿Cómo es tu profesor?</td>
+          </tr>
+          <tr>
+            <td class="sp">¿cuánto/a?</td>
+            <td class="en">how much? (agrees)</td>
+            <td class="sp">¿Cuánto cuesta esa mochila?</td>
+          </tr>
+          <tr>
+            <td class="sp">¿cuántos/as?</td>
+            <td class="en">how many? (agrees)</td>
+            <td class="sp">¿Cuántos años tienes? / ¿Cuántas hermanas tienes?</td>
+          </tr>
+          <tr>
+            <td class="sp">¿cuál? / ¿cuáles?</td>
+            <td class="en">which? / which ones?</td>
+            <td class="sp">¿Cuál es tu nombre? / ¿Cuáles son tus favoritos?</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Agreement note:</strong> Most question words don't change form, but three do. <em>¿Cuánto/a/os/as?</em> agrees in gender and number with the noun it asks about. <em>¿Quién?</em> and <em>¿Cuál?</em> have plural forms (<em>¿quiénes?</em>, <em>¿cuáles?</em>) when the expected answer is more than one person or thing.</p>
+
+      <div class="example-block">
+        <p class="label">⚠ The Two Big Pitfalls</p>
+        <p class="es"><strong>Pitfall 1 — ¿qué? vs ¿cuál?</strong> Both translate to <em>"what"</em> in English, but they're not interchangeable.</p>
+        <p class="es" style="margin-left:18px">→ <strong>¿Qué + ser?</strong> asks for a <em>definition</em> or <em>category</em>. <em>¿Qué es la salsa?</em> = What is salsa? (define it)</p>
+        <p class="es" style="margin-left:18px">→ <strong>¿Cuál + ser?</strong> asks for <em>which one</em> from a known set. <em>¿Cuál es tu nombre?</em> = What's your name? (which name, of all names, is yours)</p>
+        <p class="es" style="margin-left:18px;color:var(--wrong)">✗ <em>¿Qué es tu nombre?</em> sounds like you're asking for the definition of "name" — wrong.</p>
+      </div>
+
+      <div class="example-block">
+        <p class="label">⚠ Pitfall 2 — ¿por qué? vs porque</p>
+        <p class="es"><strong>¿Por qué?</strong> (two words, accent on <em>qué</em>) — <em>"why?"</em> Used in questions.</p>
+        <p class="es"><strong>porque</strong> (one word, no accent) — <em>"because"</em> Used to answer.</p>
+        <p class="es">Q: <em>¿<strong>Por qué</strong> te gusta el cine?</em></p>
+        <p class="es">A: <em>Me gusta el cine <strong>porque</strong> me encantan las historias.</em></p>
+      </div>
+
+      <div class="example-block">
+        <p class="label">💡 Useful for ¡Adivina quién!</p>
+        <p class="es">¿Es <strong>hombre</strong> o <strong>mujer</strong>?</p>
+        <p class="es">¿<strong>De dónde</strong> es?</p>
+        <p class="es">¿<strong>Cuántos</strong> años tiene?</p>
+        <p class="es">¿<strong>Qué</strong> hace? (profesión)</p>
+        <p class="es">¿<strong>Por qué</strong> es famoso/a?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ EJERCICIOS -->
+<section id="ejercicios">
+  <h2 class="section-title">Ejercicios — Practice Exercises</h2>
+  <p class="section-meta">Interactive · Type your answers and click Check</p>
+
+  <!-- EJERCICIO 6 — Gustar fill-in (word bank) -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 6 — Gustar: Choose the Correct Form</h3>
+      <span class="ex-num">EJ. 6</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">Fill in with the correct form of <em>gustar</em>. Type the full phrase (e.g., <em>"me gusta"</em> or <em>"le gustan"</em>). / Completa con la forma correcta.</p>
+      <div class="word-bank">
+        <span class="word-bank-label">Phrase Bank</span>
+        <span class="word-chip">me gusta</span>
+        <span class="word-chip">me gustan</span>
+        <span class="word-chip">te gusta</span>
+        <span class="word-chip">te gustan</span>
+        <span class="word-chip">le gusta</span>
+        <span class="word-chip">le gustan</span>
+        <span class="word-chip">nos gusta</span>
+        <span class="word-chip">nos gustan</span>
+      </div>
+      <div id="ej6"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj6()">Check Answers</button>
+        <button class="btn btn-reset" onclick="resetEj6()">Reset</button>
+        <span class="score-badge" id="score6"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 7 — Numbers in words -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 7 — Números 1–50: Write the Number in Words</h3>
+      <span class="ex-num">EJ. 7</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">Write each number in Spanish words. Accents are optional — <em>"dieciseis"</em> is accepted as well as <em>"dieciséis"</em>. / Escribe cada número en palabras en español.</p>
+      <div id="ej7"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj7()">Check Answers</button>
+        <button class="btn btn-reset" onclick="resetEj7()">Reset</button>
+        <span class="score-badge" id="score7"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 8 — Demonstratives -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 8 — Demostrativos: este / ese / aquel</h3>
+      <span class="ex-num">EJ. 8</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">Choose the correct demonstrative based on the distance hint and the noun's gender/number. Type the full demonstrative form. / Escribe el demostrativo con género y número correctos.</p>
+      <div class="word-bank">
+        <span class="word-bank-label">Reference</span>
+        <span class="word-chip">este / esta / estos / estas</span>
+        <span class="word-chip">ese / esa / esos / esas</span>
+        <span class="word-chip">aquel / aquella / aquellos / aquellas</span>
+      </div>
+      <div id="ej8"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj8()">Check Answers</button>
+        <button class="btn btn-reset" onclick="resetEj8()">Reset</button>
+        <span class="score-badge" id="score8"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 9 — Connectors -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 9 — Conectores: Connect the Ideas</h3>
+      <span class="ex-num">EJ. 9</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">Fill in with the connector that best fits the meaning. / Completa con el conector que mejor encaje.</p>
+      <div class="word-bank">
+        <span class="word-bank-label">Connector Bank</span>
+        <span class="word-chip">y</span>
+        <span class="word-chip">pero</span>
+        <span class="word-chip">también</span>
+        <span class="word-chip">tampoco</span>
+        <span class="word-chip">por eso</span>
+        <span class="word-chip">así que</span>
+      </div>
+      <div id="ej9"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj9()">Check Answers</button>
+        <button class="btn btn-reset" onclick="resetEj9()">Reset</button>
+        <span class="score-badge" id="score9"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 10 — ¡Adivina el precio! -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 10 — ¡Adivina el precio! · Guess the Price</h3>
+      <span class="ex-num">EJ. 10</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">For each common online-shopping item below, write your <strong>price guess</strong> in Spanish words (1–50 dollars). Then click <em>"Revelar precios"</em> to see the real price and how close you were. / Para cada artículo, escribe tu adivinanza del precio en palabras en español, y después revela los precios reales.</p>
+      <div id="ej10" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:16px"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj10()">Revelar precios &amp; comprobar</button>
+        <button class="btn btn-reset" onclick="resetEj10()">Reset</button>
+        <span class="score-badge" id="score10"></span>
+        <span class="score-badge" id="score10b" style="margin-left:6px"></span>
+      </div>
+      <p style="font-size:0.78rem;color:var(--text-light);margin-top:14px;font-style:italic;line-height:1.5">
+        💡 Cada precio es entre 1 y 50 dólares. Escribe en palabras: <em>"diez", "veinticinco", "treinta y dos"</em>… <br>
+        Two scores are shown: <strong>Spanish</strong> (was your word a valid number 1–50?) and <strong>Cerca</strong> (within $5 of the actual price).
+      </p>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 11 — Question word fill-in (broad) -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 11 — Palabras Interrogativas: Fill in the Question</h3>
+      <span class="ex-num">EJ. 11</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">Type the question word that fits. Don't forget the accent! / Escribe la palabra interrogativa correcta. ¡No olvides el acento!</p>
+      <div class="word-bank">
+        <span class="word-bank-label">Reference</span>
+        <span class="word-chip">qué</span>
+        <span class="word-chip">quién / quiénes</span>
+        <span class="word-chip">cuándo</span>
+        <span class="word-chip">dónde / adónde / de dónde</span>
+        <span class="word-chip">por qué</span>
+        <span class="word-chip">cómo</span>
+        <span class="word-chip">cuánto/a/os/as</span>
+      </div>
+      <div id="ej11"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj11()">Check Answers</button>
+        <button class="btn btn-reset" onclick="resetEj11()">Reset</button>
+        <span class="score-badge" id="score11"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 12 — Pitfall drill: ¿qué? vs ¿cuál?  /  ¿por qué? vs porque -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 12 — Las Trampas: ¿qué? vs ¿cuál? · ¿por qué? vs porque</h3>
+      <span class="ex-num">EJ. 12</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">Items 1–4 test <em>¿qué?</em> (definition) vs <em>¿cuál?</em> (selection). Items 5–8 test <em>¿por qué?</em> (why) vs <em>porque</em> (because). / Las trampas más comunes — léelas con cuidado.</p>
+      <div id="ej12"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj12()">Check Answers</button>
+        <button class="btn btn-reset" onclick="resetEj12()">Reset</button>
+        <span class="score-badge" id="score12"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ CULTURA -->
+<section id="cultura">
+  <h2 class="section-title">Nota Cultural — Tres directores mexicanos</h2>
+  <p class="section-meta">El Trío de Oro · Three Mexican filmmakers who reshaped Hollywood</p>
+
+  <div class="cultural-card">
+    <div class="cultural-header">
+      <h3>🏆 El Trío de Oro / The Golden Trio</h3>
+    </div>
+    <div class="cultural-body">
+      <div class="fact-card">
+        <div class="fact-icon">🎬</div>
+        <h4>Alfonso Cuarón</h4>
+        <p>Director <em>mexicano</em> conocido por <em>Y Tu Mamá También</em>, <em>Gravity</em> y <em>Roma</em>. Le gustan las cámaras en plano secuencia y las historias íntimas con escala épica. Ganó el Óscar a Mejor Director dos veces.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🎥</div>
+        <h4>Alejandro González Iñárritu</h4>
+        <p>Otro director <em>mexicano</em> brillante. Sus películas más famosas son <em>Birdman</em> y <em>The Revenant</em>. Le gusta explorar temas de mortalidad y resiliencia. También ganó dos Óscares consecutivos a Mejor Director.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🐠</div>
+        <h4>Guillermo del Toro</h4>
+        <p>Director <em>mexicano</em> de Guadalajara. Le gustan los monstruos, los cuentos de hadas oscuros y el surrealismo. Ganó el Óscar a Mejor Película por <em>The Shape of Water</em> en 2018.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🌎</div>
+        <h4>Un fenómeno cultural</h4>
+        <p>Estos tres directores son amigos y colaboradores. <strong>Entre 2014 y 2019, ganaron el Óscar a Mejor Director cinco veces en seis años</strong> — un logro histórico que refleja la influencia global del cine mexicano contemporáneo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ¡Adivina quién! oral practice -->
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon" style="background:var(--sage)">💬</div>
+      <div>
+        <h3>Actividad Oral — ¡Adivina quién! / Guess Who?</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Pair game — Guess Who</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <p>Think of a famous person from the Spanish-speaking world. Your partner asks yes/no questions to guess who it is. <em>Piensa en una persona famosa. Tu compañero/a hace preguntas de sí/no para adivinar.</em></p>
+      <div class="example-block">
+        <p class="label">Cómo jugar · How to Play</p>
+        <p class="es"><strong>Estudiante A:</strong> Piensa en una persona famosa — actor, cantante, deportista, político, escritor. <em>¡No digas quién es!</em></p>
+        <p class="es"><strong>Estudiante B:</strong> Haz hasta 10 preguntas de sí/no. Por ejemplo — <em>¿Es hombre? ¿Es cantante? ¿Es de México? ¿Tiene más de 40 años? ¿Le gusta el fútbol?</em></p>
+        <p class="es"><strong>Estudiante A:</strong> Solo responde <em>Sí</em>, <em>No</em>, o <em>Más o menos</em>.</p>
+        <p class="es"><strong>Cambien:</strong> Switch roles. Lleven la cuenta — ¿quién adivina con menos preguntas?</p>
+        <p class="es"><strong>Reporte final:</strong> Después de 3 rondas, di a la clase — <em>"Mi persona es ___. Es ___ y ___. Le gusta(n)…"</em></p>
+      </div>
+
+      <div class="example-block">
+        <p class="label">Frases útiles · Useful Phrases</p>
+        <p class="es">¿Es <strong>[nacionalidad]</strong>? — Is the person <em>[nationality]</em>?</p>
+        <p class="es">¿Le gusta(n) <strong>[noun]</strong>? — Does he/she like <em>[noun]</em>?</p>
+        <p class="es">¿Tiene más de <strong>[número]</strong> años? — Is he/she more than <em>[number]</em> years old?</p>
+        <p class="es">¿Es <strong>[profesión]</strong>? — Is the person a <em>[profession]</em>?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ REPASO MIDTERM -->
+<section id="repaso">
+  <div class="week-hero">
+    <h1>Repaso para el Midterm</h1>
+    <p>Study guide · Everything from Semanas 1–3 in one place</p>
+    <div class="topic-chips">
+      <span class="chip">ser · llamarse</span>
+      <span class="chip">-ar / -er / -ir</span>
+      <span class="chip">artículos</span>
+      <span class="chip">ir · tener · hacer</span>
+      <span class="chip">concordancia</span>
+      <span class="chip">gustar</span>
+      <span class="chip">demostrativos</span>
+      <span class="chip">números 1–500</span>
+      <span class="chip">conectores</span>
+    </div>
+  </div>
+
+  <!-- ══════════ SEMANA 1 ══════════ -->
+  <h2 class="section-title">Semana 1 — Fundamentos</h2>
+  <p class="section-meta">Pronouns · ser · llamarse · alphabet · regular verbs · articles · agreement</p>
+
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">S1</div>
+      <div>
+        <h3>Pronombres personales &amp; SER / LLAMARSE</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Who + the two verbs you use to introduce yourself</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <table class="pronoun-table">
+        <thead>
+          <tr><th>Pronoun</th><th>English</th><th>ser (to be)</th><th>llamarse (to be called)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sp">yo</td><td class="en">I</td><td class="sp">soy</td><td class="sp">me llamo</td></tr>
+          <tr><td class="sp">tú</td><td class="en">you (informal)</td><td class="sp">eres</td><td class="sp">te llamas</td></tr>
+          <tr><td class="sp">él / ella / usted</td><td class="en">he / she / you (formal)</td><td class="sp">es</td><td class="sp">se llama</td></tr>
+          <tr><td class="sp">nosotros/as</td><td class="en">we</td><td class="sp">somos</td><td class="sp">nos llamamos</td></tr>
+          <tr><td class="sp">ellos/as / ustedes</td><td class="en">they / you all</td><td class="sp">son</td><td class="sp">se llaman</td></tr>
+        </tbody>
+      </table>
+      <div class="example-block">
+        <p class="label">Ejemplos</p>
+        <p class="es">Yo soy estudiante. Me llamo Ana. <span class="en">→ I am a student. My name is Ana.</span></p>
+        <p class="es">¿Cómo te llamas? — Me llamo Juan y soy de Washington.</p>
+        <p class="es">Ella es profesora. Se llama Sra. López.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">S1</div>
+      <div>
+        <h3>El alfabeto y las vocales</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Vowels are short, pure, and always the same</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <p>Spanish has <strong>27 letters</strong> (the English 26 plus <em>ñ</em>). Unlike English, each vowel makes <strong>one</strong> consistent sound every time.</p>
+      <table class="pronoun-table">
+        <thead><tr><th>Vowel</th><th>Sound</th><th>Like in…</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td class="sp">a</td><td class="en">ah</td><td class="en">f<strong>a</strong>ther</td><td class="sp">casa</td></tr>
+          <tr><td class="sp">e</td><td class="en">eh</td><td class="en">b<strong>e</strong>t</td><td class="sp">mesa</td></tr>
+          <tr><td class="sp">i</td><td class="en">ee</td><td class="en">s<strong>ee</strong></td><td class="sp">sí</td></tr>
+          <tr><td class="sp">o</td><td class="en">oh</td><td class="en">n<strong>o</strong></td><td class="sp">hola</td></tr>
+          <tr><td class="sp">u</td><td class="en">oo</td><td class="en">m<strong>oo</strong>n</td><td class="sp">luna</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">S1</div>
+      <div>
+        <h3>Verbos regulares — <em>-ar</em> / <em>-er</em> / <em>-ir</em></h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Drop the ending, add the matching endings</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <p>Take the infinitive, remove <em>-ar / -er / -ir</em>, and add the ending for each subject. <em>-er</em> and <em>-ir</em> only differ in the <em>nosotros</em> form.</p>
+      <table class="pronoun-table">
+        <thead>
+          <tr><th>Pronoun</th><th>hablar (to speak)</th><th>comer (to eat)</th><th>vivir (to live)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sp">yo</td><td class="sp">hablo</td><td class="sp">como</td><td class="sp">vivo</td></tr>
+          <tr><td class="sp">tú</td><td class="sp">hablas</td><td class="sp">comes</td><td class="sp">vives</td></tr>
+          <tr><td class="sp">él/ella/Ud.</td><td class="sp">habla</td><td class="sp">come</td><td class="sp">vive</td></tr>
+          <tr><td class="sp">nosotros/as</td><td class="sp">hablamos</td><td class="sp">comemos</td><td class="sp">vivimos</td></tr>
+          <tr><td class="sp">ellos/Uds.</td><td class="sp">hablan</td><td class="sp">comen</td><td class="sp">viven</td></tr>
+        </tbody>
+      </table>
+      <div class="example-block">
+        <p class="label">Más verbos de este tipo</p>
+        <p class="es"><strong>-ar:</strong> estudiar, caminar, trabajar, escuchar</p>
+        <p class="es"><strong>-er:</strong> beber, leer, aprender, comprender</p>
+        <p class="es"><strong>-ir:</strong> escribir, abrir, recibir, compartir</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">S1</div>
+      <div>
+        <h3>Artículos &amp; concordancia de sustantivos</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Gender + number must match the noun</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <table class="pronoun-table">
+        <thead><tr><th>&nbsp;</th><th>Masc. sg.</th><th>Fem. sg.</th><th>Masc. pl.</th><th>Fem. pl.</th></tr></thead>
+        <tbody>
+          <tr><td><span class="connector-chip">definite (the)</span></td><td class="sp">el libro</td><td class="sp">la mesa</td><td class="sp">los libros</td><td class="sp">las mesas</td></tr>
+          <tr><td><span class="connector-chip">indefinite (a/some)</span></td><td class="sp">un libro</td><td class="sp">una mesa</td><td class="sp">unos libros</td><td class="sp">unas mesas</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Gender:</strong> most nouns ending in <em>-o</em> are masculine, most in <em>-a</em> are feminine (watch exceptions: <em>el día, la mano, el problema</em>). <strong>Number:</strong> add <em>-s</em> after a vowel (<em>libro → libros</em>) and <em>-es</em> after a consonant (<em>profesor → profesores</em>).</p>
+    </div>
+  </div>
+
+  <!-- ══════════ SEMANA 2 ══════════ -->
+  <h2 class="section-title">Semana 2 — Verbos irregulares &amp; adjetivos</h2>
+  <p class="section-meta">ir · tener · hacer · nationality &amp; adjective agreement</p>
+
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">S2</div>
+      <div>
+        <h3>Verbos irregulares — <em>ir</em> / <em>tener</em> / <em>hacer</em></h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">All irregular in the yo form</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <table class="pronoun-table">
+        <thead>
+          <tr><th>Pronoun</th><th>ir (to go)</th><th>tener (to have)</th><th>hacer (to do/make)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sp">yo</td><td class="sp">voy</td><td class="sp">tengo</td><td class="sp">hago</td></tr>
+          <tr><td class="sp">tú</td><td class="sp">vas</td><td class="sp">tienes</td><td class="sp">haces</td></tr>
+          <tr><td class="sp">él/ella/Ud.</td><td class="sp">va</td><td class="sp">tiene</td><td class="sp">hace</td></tr>
+          <tr><td class="sp">nosotros/as</td><td class="sp">vamos</td><td class="sp">tenemos</td><td class="sp">hacemos</td></tr>
+          <tr><td class="sp">ellos/Uds.</td><td class="sp">van</td><td class="sp">tienen</td><td class="sp">hacen</td></tr>
+        </tbody>
+      </table>
+      <div class="example-block">
+        <p class="label">Frases clave</p>
+        <p class="es">ir a + lugar · tener + número + años · hacer la tarea / hacer ejercicio</p>
+        <p class="es">Voy a la biblioteca. · Tengo veinte años. · Hago la tarea por la noche.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">S2</div>
+      <div>
+        <h3>Concordancia de adjetivos (incl. nacionalidad)</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Gender (M/F) + number (sg/pl)</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <table class="pronoun-table">
+        <thead><tr><th>Ends in…</th><th>Masc.</th><th>Fem.</th><th>Plural</th></tr></thead>
+        <tbody>
+          <tr><td><span class="connector-chip">-o / -a</span></td><td class="sp">mexicano · alto</td><td class="sp">mexicana · alta</td><td class="sp">-os / -as</td></tr>
+          <tr><td><span class="connector-chip">consonant</span></td><td class="sp">español · trabajador</td><td class="sp">española · trabajadora <span class="en">(+a)</span></td><td class="sp">-es / -as</td></tr>
+          <tr><td><span class="connector-chip">-e (no change)</span></td><td class="sp">inteligente</td><td class="sp">inteligente</td><td class="sp">inteligentes</td></tr>
+          <tr><td><span class="connector-chip">-ista</span></td><td class="sp">optimista</td><td class="sp">optimista</td><td class="sp">optimistas</td></tr>
+        </tbody>
+      </table>
+      <div class="example-block">
+        <p class="label">Las cuatro formas</p>
+        <p class="es">un chico mexicano · una chica mexicana · unos chicos mexicanos · unas chicas mexicanas</p>
+        <p class="es">Nationalities are <strong>not</strong> capitalized in Spanish: <em>ella es colombiana</em>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ SEMANA 3 ══════════ -->
+  <h2 class="section-title">Semana 3 — Gustar, demostrativos, números &amp; conectores</h2>
+  <p class="section-meta">gustar · pronombres de OI · este/ese/aquel · números 1–500 · conectores</p>
+
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">S3</div>
+      <div>
+        <h3>GUSTAR &amp; pronombres de objeto indirecto</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">The verb agrees with the thing liked, not the person</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <p><em>gusta</em> (singular / infinitive) vs <em>gustan</em> (plural). The pronoun says WHO likes it: <span class="connector-chip">me</span> <span class="connector-chip">te</span> <span class="connector-chip">le</span> <span class="connector-chip">nos</span> (<span class="connector-chip">les</span>).</p>
+      <table class="pronoun-table">
+        <thead><tr><th>Structure</th><th>Example</th><th>English</th></tr></thead>
+        <tbody>
+          <tr><td class="sp">me gusta + infinitive</td><td class="sp">Me gusta bailar.</td><td class="en">I like to dance.</td></tr>
+          <tr><td class="sp">me gusta + singular noun</td><td class="sp">Me gusta la música.</td><td class="en">I like music.</td></tr>
+          <tr><td class="sp">me gustan + plural noun</td><td class="sp">Me gustan los libros.</td><td class="en">I like books.</td></tr>
+          <tr><td class="sp">no + me/te/le… gusta(n)</td><td class="sp">No le gustan las verduras.</td><td class="en">He/She doesn't like vegetables.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">S3</div>
+      <div>
+        <h3>Adjetivos demostrativos — <em>este / ese / aquel</em></h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Three distances · agree in gender &amp; number</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <table class="pronoun-table">
+        <thead><tr><th>Distance</th><th>Masc. sg.</th><th>Fem. sg.</th><th>Masc. pl.</th><th>Fem. pl.</th></tr></thead>
+        <tbody>
+          <tr><td><span class="connector-chip">near me (this)</span></td><td class="sp">este</td><td class="sp">esta</td><td class="sp">estos</td><td class="sp">estas</td></tr>
+          <tr><td><span class="connector-chip">near you (that)</span></td><td class="sp">ese</td><td class="sp">esa</td><td class="sp">esos</td><td class="sp">esas</td></tr>
+          <tr><td><span class="connector-chip">far (that over there)</span></td><td class="sp">aquel</td><td class="sp">aquella</td><td class="sp">aquellos</td><td class="sp">aquellas</td></tr>
+        </tbody>
+      </table>
+      <div class="example-block">
+        <p class="label">Ejemplos</p>
+        <p class="es">Este libro (aquí) · esa mochila (a tu lado) · aquellas montañas (allá lejos)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">S3</div>
+      <div>
+        <h3>Números cardinales 1–500</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Memorize the patterns, not every number</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <table class="pronoun-table">
+        <thead><tr><th>Range</th><th>Numbers</th></tr></thead>
+        <tbody>
+          <tr><td><span class="connector-chip">1–15 (unique)</span></td><td class="sp">uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez, once, doce, trece, catorce, quince</td></tr>
+          <tr><td><span class="connector-chip">16–29 (one word)</span></td><td class="sp">dieciséis, diecisiete… veinte, veintiuno, veintidós… veintinueve</td></tr>
+          <tr><td><span class="connector-chip">tens</span></td><td class="sp">30 treinta · 40 cuarenta · 50 cincuenta · 60 sesenta · 70 setenta · 80 ochenta · 90 noventa</td></tr>
+          <tr><td><span class="connector-chip">30–99 (+ y)</span></td><td class="sp">treinta y uno, cuarenta y dos, noventa y nueve <span class="en">(three separate words)</span></td></tr>
+          <tr><td><span class="connector-chip">hundreds</span></td><td class="sp">100 cien / ciento · 200 doscientos · 300 trescientos · 400 cuatrocientos · 500 quinientos</td></tr>
+        </tbody>
+      </table>
+      <div class="example-block">
+        <p class="label">⚠ Reglas importantes</p>
+        <p class="es"><strong>y</strong> solo va entre las decenas y las unidades: <em>ciento treinta <u>y</u> cinco</em> (135) — nunca después de "cien(to)".</p>
+        <p class="es"><strong>cien</strong> exacto = 100; <strong>ciento</strong> + resto = 101–199: <em>cien libros</em> pero <em>ciento uno</em>.</p>
+        <p class="es">Los cientos concuerdan en género: <em>doscient<u>os</u> chicos · doscient<u>as</u> chicas</em>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">S3</div>
+      <div>
+        <h3>Conectores</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Glue simple sentences into fluent speech</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <table class="pronoun-table">
+        <thead><tr><th>Connector</th><th>Meaning</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td class="sp">y <span class="en">(→ e before i-/hi-)</span></td><td class="en">and</td><td class="sp">Estudio español y francés. · madre e hija</td></tr>
+          <tr><td class="sp">pero</td><td class="en">but</td><td class="sp">Me gusta el café, pero no el té.</td></tr>
+          <tr><td class="sp">por eso</td><td class="en">that's why / so</td><td class="sp">Estudio mucho, por eso saco buenas notas.</td></tr>
+          <tr><td class="sp">también</td><td class="en">also, too</td><td class="sp">Me gusta leer y también escribir.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Quick checklist -->
+  <div class="cultural-card">
+    <div class="cultural-header"><h3>✅ Checklist de repaso · Study Checklist</h3></div>
+    <div class="cultural-body">
+      <div class="fact-card"><h4>Semana 1</h4><p>Pronombres · ser · llamarse · alfabeto/vocales · verbos -ar/-er/-ir · artículos · concordancia</p></div>
+      <div class="fact-card"><h4>Semana 2</h4><p>ir · tener · hacer · adjetivos de nacionalidad · concordancia de género y número</p></div>
+      <div class="fact-card"><h4>Semana 3</h4><p>gustar + OI · demostrativos · números 1–500 · conectores</p></div>
+      <div class="fact-card"><h4>Consejo</h4><p>Repasa las tablas en voz alta y practica los ejercicios de la pestaña <strong>Ejercicios</strong> antes del examen.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+// ── NAVIGATION ─────────────────────────────────────
+function showSection(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ── COMPLETION REPORT ──────────────────────────────
+const exerciseMeta = {
+  score6:  'Ejercicio 6 — Gustar',
+  score7:  'Ejercicio 7 — Números 1–50',
+  score8:  'Ejercicio 8 — Demostrativos',
+  score9:  'Ejercicio 9 — Conectores',
+  score10: 'Ejercicio 10 — ¡Adivina el precio! (español)',
+  score11: 'Ejercicio 11 — Palabras interrogativas',
+  score12: 'Ejercicio 12 — Las trampas (qué/cuál · por qué/porque)',
+};
+const studentScores = {};
+
+function downloadReport() {
+  const nameEl = document.getElementById('studentName');
+  const msg = document.getElementById('reportMsg');
+  const name = (nameEl.value || '').trim();
+  if (!name) {
+    msg.style.color = '#f0c45a';
+    msg.textContent = 'Please enter your name first.';
+    nameEl.focus();
+    return;
+  }
+  const attempted = Object.keys(exerciseMeta).filter(k => studentScores[k]);
+  if (attempted.length === 0) {
+    msg.style.color = '#f0c45a';
+    msg.textContent = 'Check answers on at least one exercise first.';
+    return;
+  }
+
+  let totC = 0, totT = 0;
+  const rows = Object.keys(exerciseMeta).map(k => {
+    const sc = studentScores[k];
+    if (sc) { totC += sc.correct; totT += sc.total; }
+    const status = sc ? `${sc.correct} / ${sc.total}` : 'Not attempted';
+    const pct = sc ? Math.round(sc.correct / sc.total * 100) : null;
+    const color = !sc ? '#999' : pct >= 85 ? '#2d6e3e' : pct >= 60 ? '#856404' : '#9e2a2a';
+    return `<tr>
+      <td style="padding:10px 14px;border-bottom:1px solid #eee">${exerciseMeta[k]}</td>
+      <td style="padding:10px 14px;border-bottom:1px solid #eee;font-family:monospace;color:${color};font-weight:700">${status}</td>
+      <td style="padding:10px 14px;border-bottom:1px solid #eee;font-family:monospace;color:${color}">${pct===null?'—':pct+'%'}</td>
+    </tr>`;
+  }).join('');
+
+  const overall = totT ? Math.round(totC / totT * 100) : 0;
+  const now = new Date();
+  const stamp = now.toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' });
+  const safeName = name.replace(/[<>&]/g, '');
+
+  const html = `<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<title>Completion Report — ${safeName}</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;background:#fdf6ec;color:#2a1f14;max-width:760px;margin:40px auto;padding:0 24px;line-height:1.6}
+  .card{background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(26,39,68,0.15);overflow:hidden}
+  .hd{background:#1a2744;color:#fff;padding:28px 32px}
+  .hd h1{margin:0 0 6px;font-size:1.5rem}
+  .hd .sub{font-family:monospace;font-size:0.72rem;letter-spacing:0.08em;color:rgba(255,255,255,0.6);text-transform:uppercase}
+  .body{padding:28px 32px}
+  .field{margin-bottom:8px;font-size:0.95rem}
+  .field b{display:inline-block;min-width:150px;color:#6b5a45}
+  table{width:100%;border-collapse:collapse;margin:20px 0;font-size:0.9rem}
+  th{background:#f4e8d4;text-align:left;padding:10px 14px;font-family:monospace;font-size:0.65rem;letter-spacing:0.06em;text-transform:uppercase;color:#1a2744}
+  .total{background:#1a2744;color:#fff;border-radius:8px;padding:16px 20px;margin-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:1.05rem}
+  .total b{font-size:1.6rem}
+  .note{font-size:0.75rem;color:#6b5a45;margin-top:20px;font-style:italic}
+  .badge{display:inline-block;background:#c4522a;color:#fff;font-family:monospace;font-size:0.62rem;padding:4px 10px;border-radius:3px;letter-spacing:0.08em}
+</style></head><body>
+<div class="card">
+  <div class="hd">
+    <span class="badge">SPSCC · ESP 121 · Semana 3</span>
+    <h1 style="margin-top:10px">Completion Report</h1>
+    <div class="sub">Capítulo 2.2 — Gustar, Demostrativos y Preguntas</div>
+  </div>
+  <div class="body">
+    <div class="field"><b>Student:</b> ${safeName}</div>
+    <div class="field"><b>Generated:</b> ${stamp}</div>
+    <div class="field"><b>Exercises attempted:</b> ${attempted.length} of ${Object.keys(exerciseMeta).length}</div>
+    <table>
+      <thead><tr><th>Exercise</th><th>Score</th><th>%</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div class="total"><span>Overall (attempted exercises)</span><b>${totC} / ${totT} · ${overall}%</b></div>
+    <p class="note">This report was generated from the interactive Capítulo 2.2 practice page. Scores reflect answers checked in this browser session at the time shown above.</p>
+  </div>
+</div>
+</body></html>`;
+
+  const blob = new Blob([html], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const fileSafe = safeName.replace(/[^a-z0-9]+/gi, '_').replace(/^_+|_+$/g, '');
+  a.href = url;
+  a.download = `Report_ESP121_Cap2-2_${fileSafe || 'student'}.html`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  msg.style.color = '#7ba080';
+  msg.textContent = 'Report downloaded!';
+}
+
+// ── UTILITY ────────────────────────────────────────
+function normalize(s) {
+  return (s || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function showScore(id, correct, total) {
+  studentScores[id] = { correct, total };
+  const el = document.getElementById(id);
+  el.textContent = `${correct} / ${total}`;
+  const pct = correct / total;
+  el.className = 'score-badge show ' + (pct >= 0.85 ? 'good' : pct >= 0.6 ? 'ok' : 'retry');
+}
+
+// ── VOCAB CARDS — Numbers 1–50 ─────────────────────
+// Front of card shows the numeral; flip to see the Spanish word.
+const vocab1 = [
+  ['1', 'uno'],     ['2', 'dos'],      ['3', 'tres'],     ['4', 'cuatro'],
+  ['5', 'cinco'],   ['6', 'seis'],     ['7', 'siete'],    ['8', 'ocho'],
+  ['9', 'nueve'],   ['10', 'diez'],    ['11', 'once'],    ['12', 'doce'],
+  ['13', 'trece'],  ['14', 'catorce'], ['15', 'quince'],
+  ['16', 'dieciséis'],   ['17', 'diecisiete'],   ['18', 'dieciocho'],   ['19', 'diecinueve'],
+  ['20', 'veinte'],      ['21', 'veintiuno'],     ['25', 'veinticinco'],
+  ['30', 'treinta'],     ['31', 'treinta y uno'], ['35', 'treinta y cinco'],
+  ['40', 'cuarenta'],    ['42', 'cuarenta y dos'],
+  ['45', 'cuarenta y cinco'], ['50', 'cincuenta'],
+];
+
+// ── VOCAB CARDS — Connectors ───────────────────────
+const vocab2 = [
+  ['y', 'and'],
+  ['o', 'or'],
+  ['pero', 'but'],
+  ['también', 'also, too'],
+  ['tampoco', "neither, not either"],
+  ['por eso', "that's why / therefore"],
+  ['así que', 'so, therefore'],
+  ['además', 'besides, in addition'],
+  ['sin embargo', 'however'],
+  ['entonces', 'then, so'],
+];
+
+function buildCards(data, containerId) {
+  const grid = document.getElementById(containerId);
+  data.forEach(([front, back]) => {
+    const card = document.createElement('div');
+    card.className = 'vocab-card';
+    card.innerHTML = `
+      <div class="vocab-card-inner">
+        <div class="vocab-front">
+          <span class="es">${front}</span>
+          <span class="hint">tap to flip →</span>
+        </div>
+        <div class="vocab-back">
+          <span class="en">${back}</span>
+        </div>
+      </div>`;
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
+    grid.appendChild(card);
+  });
+}
+
+buildCards(vocab1, 'vocab1Cards');
+buildCards(vocab2, 'vocab2Cards');
+
+// ── GENERIC FILL-IN-WITH-HINT BUILDER ──────────────
+function buildFillExercise(data, exNum, containerId) {
+  const container = document.getElementById(containerId);
+  data.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'exercise-item';
+    const hintChip = item.verb
+      ? `<span style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--text-light);background:var(--cream-dark);padding:2px 6px;border-radius:3px">${item.verb}</span>`
+      : '';
+    div.innerHTML = `
+      <span class="item-num">${i+1}.</span>
+      <div class="item-text">
+        <div class="fill-sentence">
+          ${item.before ? `<span>${item.before}</span>` : ''}
+          ${hintChip}
+          <input class="blank-input" id="e${exNum}_${i}" type="text" placeholder="___" autocomplete="off" spellcheck="false">
+          ${item.after ? `<span>${item.after}</span>` : ''}
+        </div>
+        <div class="feedback" id="fb${exNum}_${i}"></div>
+      </div>`;
+    container.appendChild(div);
+  });
+}
+
+function checkFillExercise(data, exNum, scoreId) {
+  let correct = 0;
+  data.forEach((item, i) => {
+    const inp = document.getElementById(`e${exNum}_${i}`);
+    const fb = document.getElementById(`fb${exNum}_${i}`);
+    const ok = item.accepted.some(a => normalize(a) === normalize(inp.value));
+    inp.className = 'blank-input ' + (ok ? 'correct-input' : 'wrong-input');
+    document.querySelectorAll(`#ej${exNum} .exercise-item`)[i].className = 'exercise-item ' + (ok ? 'correct' : 'wrong');
+    fb.className = 'feedback show ' + (ok ? 'correct' : 'wrong');
+    fb.textContent = ok ? '✓ ¡Correcto!' : `✗ Answer: ${item.accepted[0]}`;
+    if (ok) correct++;
+  });
+  showScore(scoreId, correct, data.length);
+}
+
+function resetFillExercise(data, exNum, scoreId) {
+  data.forEach((_, i) => {
+    const inp = document.getElementById(`e${exNum}_${i}`);
+    inp.value = ''; inp.className = 'blank-input';
+    document.getElementById(`fb${exNum}_${i}`).className = 'feedback';
+    document.querySelectorAll(`#ej${exNum} .exercise-item`)[i].className = 'exercise-item';
+  });
+  document.getElementById(scoreId).className = 'score-badge';
+}
+
+// ── EJERCICIO 6 — GUSTAR FILL-IN ───────────────────
+const ej6Data = [
+  { before: '',                         after: 'mucho la música latina, especialmente la salsa.', accepted: ['me gusta'] },
+  { before: '¿',                        after: 'los deportes? ¿Cuál es tu deporte favorito?',     accepted: ['te gustan'] },
+  { before: 'A ella',                   after: 'el cine independiente.',                          accepted: ['le gusta'] },
+  { before: '',                         after: 'las películas de Alfonso Cuarón.',                accepted: ['me gustan', 'te gustan', 'le gustan', 'nos gustan'] },
+  { before: 'No',                       after: 'estudiar de noche; prefiero las mañanas.',        accepted: ['me gusta'] },
+  { before: 'A nosotros',               after: 'las novelas latinoamericanas.',                   accepted: ['nos gustan'] },
+  { before: '¿',                        after: '(a ti) este actor o ese?',                        accepted: ['te gusta'] },
+  { before: 'A él',                     after: 'aquellos conciertos de jazz al aire libre.',      accepted: ['le gustan'] },
+];
+buildFillExercise(ej6Data, 6, 'ej6');
+function checkEj6() { checkFillExercise(ej6Data, 6, 'score6'); }
+function resetEj6() { resetFillExercise(ej6Data, 6, 'score6'); }
+
+// ── EJERCICIO 7 — NUMBERS IN WORDS ─────────────────
+// hint chip = the numeral; student types the Spanish word.
+// Accents are optional via normalize() — both "dieciseis" and "dieciséis" pass.
+const ej7Data = [
+  { before: '', verb: '15', after: '', accepted: ['quince'] },
+  { before: '', verb: '27', after: '', accepted: ['veintisiete'] },
+  { before: '', verb: '31', after: '', accepted: ['treinta y uno'] },
+  { before: '', verb: '13', after: '', accepted: ['trece'] },
+  { before: '', verb: '42', after: '', accepted: ['cuarenta y dos'] },
+  { before: '', verb: '39', after: '', accepted: ['treinta y nueve'] },
+  { before: '', verb: '17', after: '', accepted: ['diecisiete'] },
+  { before: '', verb: '20', after: '', accepted: ['veinte'] },
+  { before: '', verb: '16', after: '', accepted: ['dieciséis'] },
+  { before: '', verb: '34', after: '', accepted: ['treinta y cuatro'] },
+  { before: '', verb: '41', after: '', accepted: ['cuarenta y uno'] },
+  { before: '', verb: '33', after: '', accepted: ['treinta y tres'] },
+  { before: '', verb: '24', after: '', accepted: ['veinticuatro'] },
+  { before: '', verb: '10', after: '', accepted: ['diez'] },
+  { before: '', verb: '45', after: '', accepted: ['cuarenta y cinco'] },
+];
+buildFillExercise(ej7Data, 7, 'ej7');
+function checkEj7() { checkFillExercise(ej7Data, 7, 'score7'); }
+function resetEj7() { resetFillExercise(ej7Data, 7, 'score7'); }
+
+// ── EJERCICIO 8 — DEMONSTRATIVES ───────────────────
+// hint chip describes distance (near me / near you / far) so students
+// pick the right family; they still need to match gender + number.
+const ej8Data = [
+  { before: '',  verb: 'near me — m. sg.',     after: 'libro es muy interesante.',          accepted: ['este'] },
+  { before: '',  verb: 'near you — f. sg.',    after: 'mochila es nueva.',                   accepted: ['esa'] },
+  { before: '',  verb: 'far — f. pl.',         after: 'montañas son hermosas.',              accepted: ['aquellas'] },
+  { before: '',  verb: 'near me — m. pl.',     after: 'tacos están deliciosos.',             accepted: ['estos'] },
+  { before: '',  verb: 'near you — m. pl.',    after: 'estudiantes son inteligentes.',       accepted: ['esos'] },
+  { before: '',  verb: 'far — m. sg.',         after: 'edificio al final de la calle.',     accepted: ['aquel'] },
+  { before: 'Me gusta', verb: 'near me — f. sg.', after: 'canción.',                         accepted: ['esta'] },
+  { before: 'No me gusta', verb: 'far — f. sg.', after: 'película tan vieja.',               accepted: ['aquella'] },
+];
+buildFillExercise(ej8Data, 8, 'ej8');
+function checkEj8() { checkFillExercise(ej8Data, 8, 'score8'); }
+function resetEj8() { resetFillExercise(ej8Data, 8, 'score8'); }
+
+// ── EJERCICIO 9 — CONNECTORS ───────────────────────
+const ej9Data = [
+  { before: 'Me gusta el café',                                 after: 'no me gusta el té.',                              accepted: ['pero'] },
+  { before: 'A ella le gustan los conciertos',                  after: 'también el teatro.',                              accepted: ['y'] },
+  { before: 'No tengo dinero,',                                 after: 'no voy al cine este fin de semana.',              accepted: ['así que', 'por eso'] },
+  { before: 'A mí me gusta el fútbol y a mi hermano',           after: '.',                                                accepted: ['también'] },
+  { before: 'No me gusta el rap y a mi amiga',                  after: '.',                                                accepted: ['tampoco'] },
+  { before: 'Estudio mucho,',                                   after: 'saco buenas notas.',                              accepted: ['por eso', 'así que'] },
+  { before: 'Me gustan las películas de Cuarón',                after: 'las de del Toro.',                                accepted: ['y'] },
+  { before: 'Quiero ir al concierto',                            after: 'no tengo entrada.',                              accepted: ['pero'] },
+];
+buildFillExercise(ej9Data, 9, 'ej9');
+function checkEj9() { checkFillExercise(ej9Data, 9, 'score9'); }
+function resetEj9() { resetFillExercise(ej9Data, 9, 'score9'); }
+
+// ── EJERCICIO 10 — ¡ADIVINA EL PRECIO! ─────────────
+// Build a Spanish-word → numeral map for 1–50, then use it
+// in reverse to parse what students type as their price guess.
+const numberWords = {
+  1:'uno', 2:'dos', 3:'tres', 4:'cuatro', 5:'cinco',
+  6:'seis', 7:'siete', 8:'ocho', 9:'nueve', 10:'diez',
+  11:'once', 12:'doce', 13:'trece', 14:'catorce', 15:'quince',
+  16:'dieciséis', 17:'diecisiete', 18:'dieciocho', 19:'diecinueve',
+  20:'veinte', 21:'veintiuno', 22:'veintidós', 23:'veintitrés',
+  24:'veinticuatro', 25:'veinticinco', 26:'veintiséis',
+  27:'veintisiete', 28:'veintiocho', 29:'veintinueve',
+  30:'treinta', 40:'cuarenta', 50:'cincuenta'
+};
+// 31–39 and 41–49 use "treinta y uno", "cuarenta y dos", etc.
+const _ones = {1:'uno', 2:'dos', 3:'tres', 4:'cuatro', 5:'cinco',
+               6:'seis', 7:'siete', 8:'ocho', 9:'nueve'};
+[30, 40].forEach(t => {
+  for (let o = 1; o <= 9; o++) {
+    numberWords[t + o] = `${numberWords[t]} y ${_ones[o]}`;
+  }
+});
+
+// Reverse lookup: normalized Spanish → numeral.
+// Using normalize() means "veintidós" and "veintidos" both work.
+const spanishToNum = {};
+Object.entries(numberWords).forEach(([num, word]) => {
+  spanishToNum[normalize(word)] = parseInt(num);
+});
+function parseSpanishNumber(input) {
+  const n = spanishToNum[normalize(input)];
+  return n !== undefined ? n : null;
+}
+
+// Items chosen to span every number-pattern in the chapter:
+// pure ones (5, 8), unique teens (11, 12, 14, 15), dieci- teens (18),
+// round twenties (20), one-word twenties (22, 25),
+// round thirties (30), thirties-with-y (33, 38),
+// round forty (40), forties-with-y (45), and round fifty (50).
+const productData = [
+  { emoji: '✏️', name: 'Lápices de colores',           price: 5  },
+  { emoji: '🔌', name: 'Cable USB-C',                  price: 8  },
+  { emoji: '☂️', name: 'Paraguas',                     price: 11 },
+  { emoji: '📓', name: 'Cuaderno (paquete de 3)',      price: 12 },
+  { emoji: '🧦', name: 'Calcetines (paquete de 6)',    price: 14 },
+  { emoji: '☕', name: 'Taza de café',                  price: 15 },
+  { emoji: '📖', name: 'Libro',                        price: 18 },
+  { emoji: '🕯️', name: 'Vela aromática',               price: 20 },
+  { emoji: '🔋', name: 'Batería externa',              price: 22 },
+  { emoji: '🎧', name: 'Auriculares Bluetooth',         price: 25 },
+  { emoji: '💡', name: 'Lámpara de escritorio',         price: 30 },
+  { emoji: '🕶️', name: 'Gafas de sol',                 price: 33 },
+  { emoji: '🪥', name: 'Cepillo de dientes eléctrico',  price: 38 },
+  { emoji: '⌚', name: 'Reloj de pulsera',              price: 40 },
+  { emoji: '🎒', name: 'Mochila',                       price: 45 },
+  { emoji: '🎮', name: 'Control de videojuegos',        price: 50 },
+];
+
+function buildEj10() {
+  const wrap = document.getElementById('ej10');
+  productData.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.style.cssText = 'background:white;border-radius:12px;padding:18px;text-align:center;box-shadow:var(--tile-shadow);border:2px solid var(--cream-dark);transition:all 0.2s';
+    card.id = `card10_${i}`;
+    card.innerHTML = `
+      <div style="font-size:3rem;line-height:1;margin-bottom:10px">${p.emoji}</div>
+      <div style="font-size:0.88rem;font-weight:600;color:var(--navy);margin-bottom:14px;min-height:2.6em;display:flex;align-items:center;justify-content:center">${p.name}</div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:10px">
+        <span style="font-family:'Space Mono',monospace;color:var(--terracotta);font-weight:700;font-size:1.05rem">$</span>
+        <input id="e10_${i}" type="text" placeholder="en español..." autocomplete="off" spellcheck="false"
+          style="width:140px;padding:7px 9px;border:2px solid var(--cream-dark);border-radius:6px;font-family:'Source Serif 4',serif;font-size:0.85rem;text-align:center">
+      </div>
+      <div id="rev10_${i}" style="font-size:0.75rem;color:var(--text-light);min-height:2.5em;line-height:1.4"></div>`;
+    wrap.appendChild(card);
+  });
+}
+
+function checkEj10() {
+  let validSpanish = 0;
+  let withinFive = 0;
+  productData.forEach((p, i) => {
+    const inp = document.getElementById(`e10_${i}`);
+    const rev = document.getElementById(`rev10_${i}`);
+    const card = document.getElementById(`card10_${i}`);
+    const guess = parseSpanishNumber(inp.value);
+    const actual = p.price;
+    const actualWord = numberWords[actual];
+
+    if (guess !== null) {
+      validSpanish++;
+      const diff = Math.abs(guess - actual);
+      if (diff <= 5) withinFive++;
+      const closeColor = diff === 0 ? 'var(--correct)' : diff <= 5 ? 'var(--gold)' : 'var(--terracotta)';
+      const closeLabel = diff === 0 ? '🎯 ¡Exacto!' : diff <= 5 ? `✓ Cerca` : `⚠ Lejos`;
+      rev.innerHTML = `
+        <div style="color:${closeColor};font-weight:700;margin-bottom:3px">${closeLabel}</div>
+        <div>Tu adivinanza: <strong>$${guess}</strong> · Real: <strong>$${actual}</strong> <em>(${actualWord})</em></div>
+        ${diff > 0 ? `<div style="color:var(--text-light);font-size:0.7rem;margin-top:2px">Diferencia: $${diff}</div>` : ''}`;
+      inp.style.borderColor = 'var(--correct)';
+      inp.style.background = 'rgba(45,127,93,0.06)';
+      card.style.borderColor = closeColor;
+    } else {
+      // Input wasn't a recognized Spanish number 1–50
+      const shown = inp.value.trim() || '(vacío)';
+      rev.innerHTML = `
+        <div style="color:var(--wrong);font-weight:700;margin-bottom:3px">✗ No es un número válido</div>
+        <div>Escribiste: <em>"${shown}"</em></div>
+        <div>Real: <strong>$${actual}</strong> · <em>${actualWord}</em></div>`;
+      inp.style.borderColor = 'var(--wrong)';
+      inp.style.background = 'rgba(176,79,72,0.06)';
+      card.style.borderColor = 'var(--wrong)';
+    }
+  });
+
+  // Two scores: Spanish accuracy (primary) and "within $5" (the game)
+  const total = productData.length;
+  showScore('score10', validSpanish, total);
+  document.getElementById('score10').textContent = `Español: ${validSpanish}/${total}`;
+  const cerca = document.getElementById('score10b');
+  cerca.textContent = `Cerca: ${withinFive}/${total}`;
+  const pctClose = withinFive / total;
+  cerca.className = 'score-badge show ' + (pctClose >= 0.5 ? 'good' : pctClose >= 0.25 ? 'ok' : 'retry');
+}
+
+function resetEj10() {
+  productData.forEach((_, i) => {
+    const inp = document.getElementById(`e10_${i}`);
+    const rev = document.getElementById(`rev10_${i}`);
+    const card = document.getElementById(`card10_${i}`);
+    inp.value = '';
+    inp.style.borderColor = '';
+    inp.style.background = '';
+    rev.innerHTML = '';
+    card.style.borderColor = 'var(--cream-dark)';
+  });
+  document.getElementById('score10').className = 'score-badge';
+  document.getElementById('score10').textContent = '';
+  document.getElementById('score10b').className = 'score-badge';
+  document.getElementById('score10b').textContent = '';
+}
+
+buildEj10();
+
+// ── EJERCICIO 11 — QUESTION WORDS (BROAD) ──────────
+// Each item gives a context that disambiguates the expected interrogative.
+// Accents are optional via normalize() — both "que" and "qué" pass.
+const ej11Data = [
+  { before: '¿',                             verb: '?',   after: 'haces los fines de semana?',                accepted: ['qué'] },
+  { before: '¿',                             verb: '?',   after: 'te llamas?',                                 accepted: ['cómo'] },
+  { before: '¿',                             verb: '?',   after: 'años tienes?',                               accepted: ['cuántos'] },
+  { before: '¿',                             verb: '?',   after: 'vives? — Vivo en Olympia.',                  accepted: ['dónde'] },
+  { before: '¿',                             verb: '?',   after: 'son los tres directores del Trío de Oro?',   accepted: ['quiénes'] },
+  { before: '¿',                             verb: '?',   after: 'vas después de clase? — Voy a la cafetería.', accepted: ['adónde'] },
+  { before: '¿',                             verb: '?',   after: 'eres? — Soy de México.',                     accepted: ['de dónde'] },
+  { before: '¿',                             verb: '?',   after: 'es tu cumpleaños? — Es el 15 de mayo.',      accepted: ['cuándo'] },
+  { before: '¿',                             verb: '?',   after: 'cuesta esa mochila? — Cuesta 45 dólares.',   accepted: ['cuánto'] },
+  { before: '¿',                             verb: '?',   after: 'estudias español? — Porque me gusta la cultura latina.', accepted: ['por qué'] },
+];
+buildFillExercise(ej11Data, 11, 'ej11');
+function checkEj11() { checkFillExercise(ej11Data, 11, 'score11'); }
+function resetEj11() { resetFillExercise(ej11Data, 11, 'score11'); }
+
+// ── EJERCICIO 12 — PITFALLS ────────────────────────
+// 1–4: ¿qué? vs ¿cuál? · use the definition-vs-selection rule.
+// 5–8: ¿por qué? vs porque · alternating Q (por qué) and A (porque).
+const ej12Data = [
+  // qué vs cuál
+  { before: '¿', verb: 'definition',           after: 'es la salsa? — Es una música latina muy alegre.',     accepted: ['qué'] },
+  { before: '¿', verb: 'selection',            after: 'es tu nombre? — Mi nombre es Ana.',                   accepted: ['cuál'] },
+  { before: '¿', verb: 'definition',           after: 'es eso? — Es una mochila nueva.',                     accepted: ['qué'] },
+  { before: '¿', verb: 'selection',            after: 'es la capital de México? — Es Ciudad de México.',     accepted: ['cuál'] },
+  // por qué vs porque
+  { before: '¿', verb: 'why? (Q)',             after: 'estudias mucho?',                                      accepted: ['por qué'] },
+  { before: '',  verb: 'because (A)',          after: 'quiero aprender español. (Estudio mucho ___)',         accepted: ['porque'] },
+  { before: '¿', verb: 'why? (Q)',             after: 'no te gusta el rap?',                                  accepted: ['por qué'] },
+  { before: '',  verb: 'because (A)',          after: 'es muy ruidoso. (No me gusta el rap ___)',             accepted: ['porque'] },
+];
+buildFillExercise(ej12Data, 12, 'ej12');
+function checkEj12() { checkFillExercise(ej12Data, 12, 'score12'); }
+function resetEj12() { resetFillExercise(ej12Data, 12, 'score12'); }
+
+</script>
+
+</body>
+</html>
